@@ -2,6 +2,7 @@ package sn.edu.ept.git.dic2.demoServiceWeb.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sn.edu.ept.git.dic2.demoServiceWeb.controller.FiliaireDTO;
 import sn.edu.ept.git.dic2.demoServiceWeb.entities.Filiaire;
 import sn.edu.ept.git.dic2.demoServiceWeb.repositories.FiliaireRepository;
 
@@ -24,5 +25,9 @@ public class FiliaireService {
     }
     public void deleteFiliaire(String code){
         filiaireRepository.deleteById(code);
+    }
+
+    public Filiaire findByNom(String nom){
+        return filiaireRepository.findByNom(nom);
     }
 }
