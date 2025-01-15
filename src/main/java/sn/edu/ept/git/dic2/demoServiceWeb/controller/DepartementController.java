@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sn.edu.ept.git.dic2.demoServiceWeb.entities.Departement;
 import sn.edu.ept.git.dic2.demoServiceWeb.services.DepartementService;
 
 import java.util.List;

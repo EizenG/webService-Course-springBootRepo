@@ -5,7 +5,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import sn.edu.ept.git.dic2.demoServiceWeb.controller.Departement;
+import sn.edu.ept.git.dic2.demoServiceWeb.entities.Departement;
 
 import java.util.List;
 

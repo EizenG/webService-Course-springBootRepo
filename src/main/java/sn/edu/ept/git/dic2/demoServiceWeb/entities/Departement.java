@@ -1,4 +1,4 @@
-package sn.edu.ept.git.dic2.demoServiceWeb.controller;
+package sn.edu.ept.git.dic2.demoServiceWeb.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

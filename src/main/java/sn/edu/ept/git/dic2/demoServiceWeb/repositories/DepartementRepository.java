@@ -1,6 +1,6 @@
 package sn.edu.ept.git.dic2.demoServiceWeb.repositories;
 
-import sn.edu.ept.git.dic2.demoServiceWeb.controller.Departement;
+import sn.edu.ept.git.dic2.demoServiceWeb.entities.Departement;
 
 import java.util.List;
 

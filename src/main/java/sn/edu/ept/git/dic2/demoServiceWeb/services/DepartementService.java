@@ -2,7 +2,7 @@ package sn.edu.ept.git.dic2.demoServiceWeb.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sn.edu.ept.git.dic2.demoServiceWeb.controller.Departement;
+import sn.edu.ept.git.dic2.demoServiceWeb.entities.Departement;
 import sn.edu.ept.git.dic2.demoServiceWeb.repositories.DepartementRepository;
 
 import java.util.List;

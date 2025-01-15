@@ -3,7 +3,7 @@ package sn.edu.ept.git.dic2.demoServiceWeb.core;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import sn.edu.ept.git.dic2.demoServiceWeb.controller.Departement;
+import sn.edu.ept.git.dic2.demoServiceWeb.entities.Departement;
 import sn.edu.ept.git.dic2.demoServiceWeb.repositories.DepartementRepository;
 
 @Component
