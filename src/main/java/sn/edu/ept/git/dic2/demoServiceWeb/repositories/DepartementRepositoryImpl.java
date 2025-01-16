@@ -11,9 +11,9 @@ import java.util.List;
 
 @Repository
 public class DepartementRepositoryImpl implements DepartementRepository {
+
     @PersistenceContext
     private EntityManager em;
-
 
     @Override
     public Departement getDepartement(String code) {
@@ -26,7 +26,6 @@ public class DepartementRepositoryImpl implements DepartementRepository {
         Query q = em.createQuery("select d from Departement d");
         return q.getResultList();
     }
-
 
     @Override
     @Transactional
@@ -44,5 +43,16 @@ public class DepartementRepositoryImpl implements DepartementRepository {
     @Transactional
     public void updateDepartement(Departement departement) {
         em.merge(departement);
+    }
+
+    @Override
+    public Departement findDepartementByNom(String nom) {
+        Query q = em.createQuery("select d from Departement d where d.nom = :nom");
+        q.setParameter("nom", nom);
+        List<Departement> departements = q.getResultList();
+        if (!departements.isEmpty()) {
+            return departements.getFirst();
+        }
+        return null;
     }
 }

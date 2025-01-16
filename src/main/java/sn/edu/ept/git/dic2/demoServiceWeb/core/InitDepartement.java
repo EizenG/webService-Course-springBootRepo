@@ -19,6 +19,7 @@ public class InitDepartement implements CommandLineRunner {
         departement.setCode("GIT");
         departement.setNom("Genie Informatique et Telecom");
 
+
         Departement gem = Departement.builder()
                 .code("GEM")
                 .nom("Genie electromecanique")

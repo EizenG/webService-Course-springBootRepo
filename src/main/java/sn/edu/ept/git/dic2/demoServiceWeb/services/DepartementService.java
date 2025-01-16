@@ -15,6 +15,7 @@ public class DepartementService {
     public List<Departement> getAllDepartements() {
         return departementRepository.getAllDepartements();
     }
+
     public Departement getDepartementById(String code) {
         return departementRepository.getDepartement(code);
     }
@@ -34,5 +35,9 @@ public class DepartementService {
     public void deleteByCode(String code) {
         Departement dept = departementRepository.getDepartement(code);
         departementRepository.deleteDepartement(dept);
+    }
+
+    public Departement findDepartementByNom(String nom) {
+        return departementRepository.findDepartementByNom(nom);
     }
 }

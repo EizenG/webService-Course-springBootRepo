@@ -10,4 +10,6 @@ public interface DepartementRepository {
     public void createDepartement(Departement departement);
     public void deleteDepartement(Departement departement);
     public void updateDepartement(Departement departement);
+
+    public Departement findDepartementByNom(String nom);
 }
