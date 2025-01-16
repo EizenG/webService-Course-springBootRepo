@@ -1,10 +1,12 @@
 package sn.edu.ept.git.dic2.demoServiceWeb.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/departements")
+@Tag(name = "Gestion des departements", description = "APIs pour faire des opérations")
 public class DepartementController {
 
     @Autowired
@@ -45,12 +48,40 @@ public class DepartementController {
                     )
             }
     )
-    public List<Departement> getDepartements() {
+    public List<Departement> getDepartements(
+            @Parameter(
+                    description = "Le département a rechercher"
+            )
+            @RequestParam(name = "q", required = true)
+            String search
+    ) {
         return departementService.getAllDepartements();
     }
 
     @PostMapping
-    public ResponseEntity createDepartement(@RequestBody Departement departement) {
+    @Operation(summary = "Ajout de département",
+            description = "Ajouter un département de l'EPT",
+            responses = {
+                @ApiResponse(
+                    responseCode = "201",
+                    description = "Enregistrement du département ok"
+                ),
+                    @ApiResponse(
+                            responseCode = "451",
+                            description = "Attribut code absent",
+                            content = @Content(
+                                    examples = {
+                                            @ExampleObject("Absence de code département")                                    }
+                            )
+                    )
+            }
+    )
+    public ResponseEntity createDepartement(
+            @RequestBody
+
+            Departement departement,
+            String search
+    ) {
         if(departement.getCode() == null){
             return ResponseEntity.status(451).body("Absence de code département");
         }
